@@ -1,0 +1,38 @@
+﻿@model HomeViewModel
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<partial name="_Carousel" />
+
+<div class="text-center">
+    <h1>Hot Deals</h1>
+    <h5>Enjoy our selection of hot deals for flights, hotels, and cars</h5>
+
+    <div class="hot-deals">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <h3>Cars</h3>
+            @foreach (var flight in Model.flightsHotDeals)
+            {
+                <partial name="_FlightCard" model="flight" />
+            }
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <h3>Hotels</h3>
+            @foreach (var hotel in Model.hotelsHotDeals)
+            {
+                <partial name="_HotelCard" model="hotel" />
+            }
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <h3>Cars</h3>
+            @foreach (var car in Model.carsHotDeals)
+            {
+                <partial name="_CarCard" model="car" />
+            }
+        </div>
+    </div>
+</div>
+
